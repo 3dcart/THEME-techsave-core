@@ -20,6 +20,35 @@ body {
 footer {
 	flex-shrink: 0;
 }
+.product-items.productList .product-item .product-content {
+    text-align: left;
+}
+.product-items.productList .product-item .img a {
+    position: initial;
+}
+.product-items.productList .product-item .img {
+    border:1px solid #ececec;
+}
+.homepage-blog-posts .post-image-container img {
+    height: 210px;
+}
+.homepage-blog-posts div#postContent {
+    height: 126px;
+}
+@media (max-width: 991px){
+.product-items.productList .product-item .img {
+    padding-right: 0;
+    width: 32%;
+}
+}
+@media(max-width:767px){
+	.homepage-blog-posts .post-image-container img,
+	.homepage-blog-posts .post-image-container,
+	.homepage-blog-posts div#postContent {
+		height: auto;
+		min-height: auto;
+	}
+}
 
 body {
 	font-family: 'Open Sans', sans-serif;
