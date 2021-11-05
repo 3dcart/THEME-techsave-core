@@ -35,6 +35,9 @@ height:auto;
 footer {
 	flex-shrink: 0;
 }
+.searchlight-balloon {
+    top: 58px !important;
+}
 .product-items.productList .product-item .product-content {
     text-align: left;
 }

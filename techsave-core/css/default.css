@@ -32,6 +32,9 @@ height:auto;
 .page-content {
 	flex: 1 0 auto;
 }
+.searchlight-balloon {
+    top: 58px !important;
+}
 footer {
 	flex-shrink: 0;
 }
