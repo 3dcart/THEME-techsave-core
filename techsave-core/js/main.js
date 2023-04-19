@@ -329,6 +329,8 @@ function getCurrentScroll() {
 	return window.pageYOffset || document.documentElement.scrollTop;
 }
 
+
+
 jQuery(function () {
 	//Quantity box listing page
 	jQuery('.QTY-input .QTY-up').click(function () {
@@ -459,3 +461,7 @@ jQuery(function () {
         }
     });
 });
+
+setTimeout(function(){
+	$('.antiCls').css("visibility", "visible");
+}, 800);
