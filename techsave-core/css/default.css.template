@@ -3,11 +3,19 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
-
-.antiCls { 
+.antiCls, .antiCls-xs { 
     visibility: hidden; 
 }
-
+.flex-direction-nav a, .flex-viewport {
+	transform: translateZ(0);
+	will-change: transform;
+}
+.fullwidth-slider.flexslider {
+    border-radius:0;
+}
+.fullwidth-slider img{
+    width: 100%;
+}
 body {
 	display: flex;
 	height: 100%;

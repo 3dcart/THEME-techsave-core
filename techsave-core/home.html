@@ -1,21 +1,30 @@
 <section id="home" class="home-page-content page-content">
-    <section class="homepage-slider">
+	<!--START: home_carousel-->
+    <section class="homepage-slider" role="region" aria-label="homepage carousel">
         <div class="container-fluid">
-        	<div class="row">
-				<section class="homepage-slider">
-                    <!--START: home_carousel-->
-                    <div class="homeCarousel flexslider" data-animation="[hc_effect]" data-slideshowspeed="[hc_delay]">
-                        <ul class="slides">
-                            <!--START: carousel-->
-                            <li><a href="[link]"><img src="/cdn-cgi/image/format=auto/[image]" alt="[image]" width="1920" height="500" class="img-responsive" /></a></li>
-                            <!--END: carousel-->
-                        </ul>
-                    </div>
-                    <!--END: home_carousel-->
-                </section>
+            <div class="row">
+                <div class="homeCarousel fullwidth-slider flexslider" data-animation="[hc_effect]" data-slideshowspeed="[hc_delay]" role="region" aria-label="Carousel">
+                    <ul class="slides">
+                        <!--START: carousel-->
+                        <li>
+							<a href="[link]">
+								<img width="425" height="220" srcset="
+                                /cdn-cgi/image/format=auto,fit=contain,width=320/[image]   320w,
+                                /cdn-cgi/image/format=auto,fit=contain,width=480/[image]   480w,
+                                /cdn-cgi/image/format=auto,fit=contain,width=640/[image]   640w,
+                                /cdn-cgi/image/format=auto,fit=contain,width=960/[image]   960w,
+                                /cdn-cgi/image/format=auto,fit=contain,width=1400/[image]  1200w
+                                "
+								src="/cdn-cgi/image/format=auto,width=1400/[image]" alt="[image]" class="img-responsive" />
+							</a>
+						</li>
+                        <!--END: carousel-->
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
+	<!--END: home_carousel-->
 
     <!--START: CATEGORY_HEADER-->
     <section class="category-header content-section">
@@ -26,10 +35,10 @@
     <!--END: CATEGORY_HEADER-->
 
 	<!--START: FEATURE_MENU-->
-    <section class="products-section">
-        <div class="container">
+    <section class="products-section antiCls-xs">
+        <div class="container" aria-label="featuredproducts" role="main">
             
-            <h1 class="header-specials">[category_Header-specials]</h1>
+            <h1 class="header-specials"><span>[category_Header-specials]</span></h1>
 
 			<div class="product-carousel flexslider">
 				<!--START: CATEGORY_ITEMS-->
@@ -48,9 +57,9 @@
 	<!--END: FEATURE_MENU-->
 
 	<!--START: TOP_SELLERS_BLOCK-->
-	<div id="modTopSellers" class="products-section">
+	<div id="modTopSellers" class="products-section antiCls-xs">
 		<div class="container">
-			<h2 class="header-specials">[frame_top-sellers]</h2>
+			<h2 class="header-specials"><span>[frame_top-sellers]</span></h2>
 
 			<div class="product-carousel flexslider">
 				<ul class="product-items slides" data-productcols="[product-cols-number]" >
@@ -74,9 +83,9 @@
 	<!--END: TOP_SELLERS_BLOCK--> 
 
 	<!--START: NEW_RELEASES_BLOCK-->
-	<div id="modNewReleases" class="products-section">
+	<div id="modNewReleases" class="products-section antiCls-xs">
 		<div class="container">
-			<h2 class="header-specials">[frame_new-releases]</h2>
+			<h2 class="header-specials"><span>[frame_new-releases]</span></h2>
 
 			<div class="product-carousel flexslider">
 				<ul class="product-items slides" data-productcols="[product-cols-number]" >
@@ -100,9 +109,9 @@
 	<!--END: NEW_RELEASES_BLOCK-->
 
     <!--START: HOMEPAGE_BLOGS-->
-	<div class="homepage-blog-posts products-section">
+	<div class="homepage-blog-posts products-section antiCls-xs">
 		<div class="container">
-            <h2 class="header-specials">[blog_recentposts]</h2>
+            <h2 class="header-specials"><span>[blog_recentposts]</span></h2>
 			<ul class="blogList clearfix">
 				<!--START: blog_post-->
 				<li class="blogPost [blog_class]">

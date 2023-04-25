@@ -48,7 +48,7 @@
 	<!--END: page_styles-->
 
 </head>
-<body class="[body_class]" data-currency="[currency_symbol]">
+<body class="[body_class]" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
 	<div id="skip">
         <a href="#site-header">Skip to Header</a>
         <a href="#page-content">Skip to Main Content</a>
@@ -59,6 +59,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 animated fadeInLeft">
+						<!--START: FRAME_MENU-->
 						<nav id="menulinks-outer" class="menulinks hidden-sm row">
 							<ul id="menulinks" class="nav navbar-nav">
 								<li id="sticky-toggle"><a href="#caTnaV" role="button" data-toggle="collapse" class="collapsed"><span role="presentation" class="icon-menu"></span></a></li>
@@ -69,6 +70,7 @@
 								<!--END: menuitems_view-->
 							</ul>
 						</nav>
+						<!--END: FRAME_MENU-->
 					</div>
 					<div class="col-md-6 col-xs-12 animated fadeInRight">
 						<a href="/view_cart.asp" class="top_links pull-right hidden-sm">
@@ -209,7 +211,7 @@
 							<div class="row">
 								<div class="col-sm-6 col-xs-12">
 									<div class="mailinglist-form clearfix">
-										<input class="mailinglist-input form-control" type="text" name="email" placeholder="Signup for our Newsletter" autocomplete="off" aria-required="true" aria-label="email address" aria-invalid="true"/>
+										<input class="mailinglist-input form-control" type="text" name="email" placeholder="[mailinglist_email-field]" autocomplete="off" aria-required="true" aria-label="email address" aria-invalid="true"/>
 										<button class="mailinglist-submit btn btn-default btn-inverse" type="submit" name="www" aria-label="mailinglist button">
 											<span id="mailing-btn-txt "><i role="presentation" class="icon-mail"></i></span>
 											<span id="mailing-btn-load" class="mailing-btn-load icon-spin2 animate-spin hidden"></span>
@@ -248,11 +250,11 @@
 							</div>
 							
 							<!--START: FRAME_LINKS-->
-							<ul id="extrapages" class="list-unstyled extrapages row">
+							<ul id="extrapages" class="list-unstyled extrapages row" aria-hidden="menu">
 								<li class="label hidden">Links</li>
 								<!--START: LINKS-->
 								<!--START: LINK_FORMAT-->
-								<li class="col-md-4 col-sm-6"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom">[link_name]</a></li>
+								<li class="col-md-4 col-sm-6" role="menuitem"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom" aria-hidden="menuitem">[link_name]</a></li>
 								<!--END: LINK_FORMAT-->
 								<!--END: LINKS-->
 							</ul>
@@ -320,11 +322,8 @@
     <nav id="mobile-menu" class="mobile-menu">
         <div class="mobile-menu-inner">
             <div class="mobile-menu-close">
-                <a href="#"></a>
+                <a href="#" aria-label="Menu Close"></a>
             </div>
-            <div class="mobile-menu-widget hidden">
-            	<a href="/"><img src="/assets/images/logos/logo.png" alt="[store_name]" class="animated fadeIn img-responsive"/></a>
-			</div>
             <div class="mobile-menu-widget">
                 <h3>Categories</h3>
                 <div id="mobile-categories"></div>
@@ -448,31 +447,32 @@
 		<script async language="JavaScript" type="text/javascript">
 			var file='/stats/count.asp';
 			var stats_d=new Date(); 
-        	var stats_s=stats_d.getSeconds();
+			var stats_s=stats_d.getSeconds(); 
 			var stats_m=stats_d.getMinutes();
 			var stats_x=stats_s*stats_m;
 			var prdID = '[catalogid]';
 			var catID = '[catid]';
-
+	
 			var stImg = document.createElement('img');
 				stImg.Class
 				stImg.width = '1';
 				stImg.height = '1';
 				stImg.alt = "3dcart stats";
-
+	
 			stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
 			if (navigator.appName=='Netscape'){stats_b='NS';} 
-        	if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';} 
+			if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';} 
 			if (navigator.appVersion.indexOf('MSIE 3')>0) {stats_b='MSIE';}
 			stats_u='' + escape(document.URL); stats_u=stats_u.replace('_','----'); stats_w=screen.width; stats_h=screen.height; 
-        	stats_v=navigator.appName;
+			stats_v=navigator.appName; 
 			stats_fs = window.screen.fontSmoothingEnabled;
 			if (stats_v != 'Netscape') {stats_c=screen.colorDepth;}
 			else {stats_c=screen.pixelDepth;}
 			stats_j=navigator.javaEnabled();
 			info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
+	
 			stImg.src =file + '?' + info; 
-        	document.getElementById('3dStats').appendChild(stImg);
+			document.getElementById('3dStats').appendChild(stImg);
 		</script>
 		<noscript><img src="/stats/count.asp" width="90" height="30" alt="3dcart stats" /> </noscript>
 	</div>
