@@ -1298,7 +1298,7 @@ ul.extrapages li a {
 .mailist-box form{
     margin:auto;
 }
-.mailist-box h3 {
+.mailist-box h2 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	line-height: 20px;
@@ -1311,12 +1311,12 @@ ul.extrapages li a {
 	padding: 10px 0;
 }
 @media (min-width: 992px) {
-	.mailist-box h3 {
+	.mailist-box h2 {
 		/* text-align: left; */
 	}
 }
 @media (min-width: 1200px) {
-	.mailist-box h3 {
+	.mailist-box h2 {
 		/* font-size: 20px; */
 	}
 }
