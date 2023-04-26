@@ -75,7 +75,11 @@ footer {
 		min-height: auto;
 	}
 }
-
+@media (max-width: 767px) {
+	.antiCls-xs { 
+		visibility: hidden; 
+	}
+}
 body {
     font-family: 'Open Sans', sans-serif;
     font-family: "Poppins", sans-serif;
