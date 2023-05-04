@@ -2,12 +2,20 @@
 ** Bootstrap over-rides
 */
 
-/*
-font-family: 'Covered By Your Grace', cursive;
-font-family: 'Poppins', sans-serif;
-font-family: 'Roboto Slab', serif;
-*/
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+.antiCls { 
+    visibility: hidden; 
+}
+.flex-direction-nav a, .flex-viewport {
+	transform: translateZ(0);
+	will-change: transform;
+}
+.fullwidth-slider.flexslider {
+    border-radius:0;
+}
+.fullwidth-slider img{
+    width: 100%;
+}
 body {
 	display: flex;
 	height: 100%;
@@ -29,6 +37,7 @@ position:static;
 width:auto;
 height:auto;
 }
+
 .page-content {
 	flex: 1 0 auto;
 }
@@ -67,7 +76,11 @@ footer {
 		min-height: auto;
 	}
 }
-
+@media (max-width: 767px) {
+	.antiCls-xs { 
+		visibility: hidden; 
+	}
+}
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-family: "Poppins", sans-serif;
@@ -1285,7 +1298,7 @@ ul.extrapages li a {
 .mailist-box form{
     margin:auto;
 }
-.mailist-box h3 {
+.mailist-box h2 {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	line-height: 20px;
@@ -1298,12 +1311,12 @@ ul.extrapages li a {
 	padding: 10px 0;
 }
 @media (min-width: 992px) {
-	.mailist-box h3 {
+	.mailist-box h2 {
 		/* text-align: left; */
 	}
 }
 @media (min-width: 1200px) {
-	.mailist-box h3 {
+	.mailist-box h2 {
 		/* font-size: 20px; */
 	}
 }

@@ -16,22 +16,50 @@
     <!--END: FRAME_RSSFEEDS -->
 
 	<!--START: page_styles-->
-	<link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
+	<link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+	<noscript>
+        <link
+            href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
 	<link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
 	[page_styles]
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:400,700' rel='stylesheet' type='text/css' />
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins:300,400,500,600,700" rel="stylesheet">
-	<link rel="StyleSheet" href="assets/templates/[template]/css/[stylesheet]" type="text/css" />
+	<link
+        rel="preload stylesheet"
+        href="assets/templates/[template]/css/[stylesheet]"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <noscript>
+        <link
+            href="assets/templates/[template]/css/[stylesheet]"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
 	<!--END: page_styles-->
 
 </head>
-<body class="[body_class]" data-currency="[currency_symbol]">
-<div id="skip"><a href="#page-content">Skip to Main Content</a></div>
+<body class="[body_class]" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
+	<div id="skip">
+        <a href="#site-header">Skip to Header</a>
+        <a href="#page-content">Skip to Main Content</a>
+        <a href="#site-footer">Skip to Footer</a>
+    </div>
 	<section class="header-navigation sticky-jump">
 		<div class="navbar-header hidden-xs clearfix">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 animated fadeInLeft">
+						<!--START: FRAME_MENU-->
 						<nav id="menulinks-outer" class="menulinks hidden-sm row">
 							<ul id="menulinks" class="nav navbar-nav">
 								<li id="sticky-toggle"><a href="#caTnaV" role="button" data-toggle="collapse" class="collapsed"><span role="presentation" class="icon-menu"></span></a></li>
@@ -42,6 +70,7 @@
 								<!--END: menuitems_view-->
 							</ul>
 						</nav>
+						<!--END: FRAME_MENU-->
 					</div>
 					<div class="col-md-6 col-xs-12 animated fadeInRight">
 						<a href="/view_cart.asp" class="top_links pull-right hidden-sm">
@@ -72,13 +101,13 @@
 				</div>
 			</div>
 		</div>
-		<header class="site-header">
+		<header class="site-header" id="site-header">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-3 visible-xs text-center head-mobile-nav">
 						<a href="#" id="mobile-menu-trigger" aria-label="menu trigger">
 							<span role="presentation" class="icon-menu"></span>
-							<div>Menu</div>
+							<div class="sr-only">Menu</div>
 						</a>
 					</div>
 
@@ -112,10 +141,10 @@
 					<div class="col-lg-3 col-md-3 col-sm-4 custom_mid hidden-xs">
 						<div class="row">
 							<button type="button" id="mobile-menu-trigger2" class="pull-right btn btn-default visible-sm">
-								<span role="presentation" class="icon-menu"></span> Menu
+								<span role="presentation" class="icon-menu" aria-label="Toggle navigation"></span> Menu
 								<span class="sr-only">Toggle navigation</span>
 							</button>
-							<div class="slogan hidden-sm">Questions? <span class="hidden-md">Call Us</span> <a href="tel:[store_phone]"><i role="presentation" class="icon-phone"></i> [store_phone]</a></div>
+							<div class="slogan hidden-sm">Questions? <span class="hidden-md">Call Us</span> <a href="tel:[store_phone]" name="Phone-Number"><i role="presentation" class="icon-phone"></i> [store_phone]</a></div>
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -176,23 +205,23 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-4 col-sm-12">
-							<h3>[frame_mailinglist]</h3>
+							<h2>[frame_mailinglist]</h2>
 						</div>
 						<div class="col-md-8 col-sm-12">
 							<div class="row">
 								<div class="col-sm-6 col-xs-12">
 									<div class="mailinglist-form clearfix">
-										<input class="mailinglist-input form-control" type="text" name="email" placeholder="Signup for our Newsletter" autocomplete="off" aria-required="true" aria-label="email address" aria-invalid="true"/>
+										<input class="mailinglist-input form-control" type="text" name="email" placeholder="[mailinglist_email-field]" autocomplete="off" aria-required="true" aria-label="email address" aria-invalid="true"/>
 										<button class="mailinglist-submit btn btn-default btn-inverse" type="submit" name="www" aria-label="mailinglist button">
 											<span id="mailing-btn-txt "><i role="presentation" class="icon-mail"></i></span>
 											<span id="mailing-btn-load" class="mailing-btn-load icon-spin2 animate-spin hidden"></span>
 										</button>
 									</div>
 								</div>
-								<div class="col-sm-6 col-xs-12">
+								<div class="col-sm-6 col-xs-12 antiCls">
 									<div class="clearfix maillist-options">
-										<div class="subscribe"><input id="list_subscribe" type="radio" name="subscribe" value="1" checked="checked"> <label for="list_subscribe">Subscribe</label></div>
-										<div class="subscribe"><input id="list_unsubscribe" type="radio" name="subscribe" value="0"> <label for="list_unsubscribe">Unsubscribe</label></div>
+										<div class="subscribe"><input id="list_subscribe" type="radio" name="subscribe" value="1" checked="checked"> <label for="list_subscribe">[mailinglist_subscribe]</label></div>
+										<div class="subscribe"><input id="list_unsubscribe" type="radio" name="subscribe" value="0"> <label for="list_unsubscribe">[mailinglist_unsubscribe]</label></div>
 									</div>
 								</div>
 							</div>
@@ -201,16 +230,16 @@
 				</div>
 			</form>
 			<div id="mailinglist-response" class="mailinglist-response">
-				<div class="mailinglist-error hidden"><span role="presentation" class="icon-attention"></span> <strong>Ooop!</strong> The email you entered isn't valid.</div>
-				<div class="mailinglist-subscribed hidden"><span role="presentation" class="icon-ok"></span> <strong>WooHoo!</strong> You subscribed successfully.</div>
-				<div class="mailinglist-unsubscribed hidden"><span role="presentation" class="icon-ok"></span> <strong>Ok!</strong> You're unsubscribed.</div>
+				<div class="mailinglist-error hidden">[mailinglist_email-error]</div>
+				<div class="mailinglist-subscribed hidden">[mailinglist_subscribe-success]</div>
+				<div class="mailinglist-unsubscribed hidden">[mailinglist_unsubscribe-success]</div>
 			</div>
 		</div>
 		<div class="clearfix"></div>
 	</div>
 	<!--END: FRAME_MAILLIST-->
 
-	<footer class="site-footer">
+	<footer class="site-footer antiCls" id="site-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8">
@@ -221,11 +250,11 @@
 							</div>
 							
 							<!--START: FRAME_LINKS-->
-							<ul id="extrapages" class="list-unstyled extrapages row">
+							<ul id="extrapages" class="list-unstyled extrapages row" role="list">
 								<li class="label hidden">Links</li>
 								<!--START: LINKS-->
 								<!--START: LINK_FORMAT-->
-								<li class="col-md-4 col-sm-6"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom">[link_name]</a></li>
+								<li class="col-md-4 col-sm-6" role="listitem"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom">[link_name]</a></li>
 								<!--END: LINK_FORMAT-->
 								<!--END: LINKS-->
 							</ul>
@@ -236,7 +265,7 @@
 				<div class="col-sm-4">
 					<!--START: social_icons-->
 					<ul class="social-icons list-unstyled list-inline">
-						<li class="social-icons-label hidden-sm">Follow Us</li>
+						<li class="social-icons-label hidden-sm">[frame_social-icons-heading]</li>
 						<!--START: social_link_blog-->
                         <li><a href="[social_link_blog_url]" class="blog" target="_blank" title="Subscribe to our Blog" aria-label="Subscribe to our Blog" role="button"><span class="icon-rss" role="presentation"></span></a></li>
                         <!--END: social_link_blog-->
@@ -293,11 +322,8 @@
     <nav id="mobile-menu" class="mobile-menu">
         <div class="mobile-menu-inner">
             <div class="mobile-menu-close">
-                <a href="#"></a>
+                <a href="#" aria-label="Menu Close"></a>
             </div>
-            <div class="mobile-menu-widget hidden">
-            	<a href="/"><img src="/assets/images/logos/logo.png" alt="[store_name]" class="animated fadeIn img-responsive"/></a>
-			</div>
             <div class="mobile-menu-widget">
                 <h3>Categories</h3>
                 <div id="mobile-categories"></div>
@@ -309,7 +335,7 @@
             <div class="mobile-menu-widget">
                 <h3>Contact Us</h3>
             	<div><a href="mailto:[store_email]"><i role="presentation" class="icon-mail"></i> [store_email]</a></div>
-            	<div><a href="tel:[store_phone]"><i role="presentation" class="icon-phone"></i>[store_phone]</a></div>
+            	<div><a href="tel:[store_phone]" name="Phone-Number"><i role="presentation" class="icon-phone"></i>[store_phone]</a></div>
 			</div>
         </div>
     </nav>
@@ -354,29 +380,101 @@
         </div>
     </div>
 
-    <link rel="stylesheet" href="assets/templates/common-core/lib/fontello/css/fontello.css" type="text/css" />
-    <link rel="stylesheet" href="assets/templates/common-core/lib/fontello/css/animation.css" type="text/css" />
-    <link rel="stylesheet" href="/assets/templates/common-core/lib/animate-me/animate.css" type="text/css" media="screen" />
+	<link
+		rel="preload stylesheet"
+		href="assets/templates/common-core/lib/fontello/css/fontello.min.css"
+		as="style"
+		onload="this.onload=null;this.rel='stylesheet'"
+	/>
+	<noscript>
+	<link
+		href="assets/templates/common-core/lib/fontello/css/fontello.min.css"
+		rel="stylesheet"
+		type="text/css"
+	/>
+	</noscript>
+	<link
+		rel="preload stylesheet"
+		href="assets/templates/common-core/lib/fontello/css/animation.css"
+		as="style"
+		onload="this.onload=null;this.rel='stylesheet'"
+	/>
+	<noscript>
+		<link
+			href="assets/templates/common-core/lib/fontello/css/animation.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+	</noscript>
 
 	<!--START: page_scripts-->
-	<script src='assets/templates/common-core/lib/jquery.min.js'></script>
-	<script src='assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js'></script>
-	<script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js"></script>
-	<script src="assets/templates/common-core/js/core.js"></script>
-	<script src="assets/templates/[template]/js/scrollreveal.min.js?vcart=7.6.0"></script>
+	<script src="assets/templates/common-core/lib/jquery.min.js"></script>
+	<script src="assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js" defer="defer"></script>
+	<script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js" defer="defer"></script>
+	<script src="assets/templates/common-core/js/core.js" defer="defer"></script>
 	<script src="assets/templates/[template]/js/jquery.hoverIntent.js"></script>
-	<script src="assets/templates/[template]/js/main.js"></script>
+	<script src="assets/templates/[template]/js/main.js" defer="defer"></script>
 	[page_scripts]
 	<!--END: page_scripts-->
 
     <!--START: quicksearch-->
-    <link rel="stylesheet" href="assets/templates/common-html5/quicksearch/quicksearch.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="assets/templates/common-html5/quicksearch/jquery.quicksearch.js"></script>
+    <link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/quicksearch/quicksearch.css"
+        as="style"
+		media="screen"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/common-core/quicksearch/quicksearch.css"
+            rel="stylesheet"
+            type="text/css"
+			media="screen"
+        />
+    </noscript>
+    <script type="text/javascript" src="assets/templates/common-core/quicksearch/jquery.quicksearch.js" defer="defer"></script>
     <script type="text/javascript">
         jQuery(function () {
             jQuery('#searchlight').searchlight('/search_quick.asp');
         });
     </script>
     <!--END: quicksearch-->
+
+	<!--START: 3dcart stats-->
+	<div id="3dStats" class="stats hidden"> 
+		<script async language="JavaScript" type="text/javascript">
+			var file='/stats/count.asp';
+			var stats_d=new Date(); 
+			var stats_s=stats_d.getSeconds(); 
+			var stats_m=stats_d.getMinutes();
+			var stats_x=stats_s*stats_m;
+			var prdID = '[catalogid]';
+			var catID = '[catid]';
+	
+			var stImg = document.createElement('img');
+				stImg.Class
+				stImg.width = '1';
+				stImg.height = '1';
+				stImg.alt = "3dcart stats";
+	
+			stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
+			if (navigator.appName=='Netscape'){stats_b='NS';} 
+			if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';} 
+			if (navigator.appVersion.indexOf('MSIE 3')>0) {stats_b='MSIE';}
+			stats_u='' + escape(document.URL); stats_u=stats_u.replace('_','----'); stats_w=screen.width; stats_h=screen.height; 
+			stats_v=navigator.appName; 
+			stats_fs = window.screen.fontSmoothingEnabled;
+			if (stats_v != 'Netscape') {stats_c=screen.colorDepth;}
+			else {stats_c=screen.pixelDepth;}
+			stats_j=navigator.javaEnabled();
+			info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
+	
+			stImg.src =file + '?' + info; 
+			document.getElementById('3dStats').appendChild(stImg);
+		</script>
+		<noscript><img src="/stats/count.asp" width="90" height="30" alt="3dcart stats" /> </noscript>
+	</div>
+	<!--END: 3dcart stats-->
 </body>
 </html>
