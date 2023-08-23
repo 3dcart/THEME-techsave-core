@@ -202,8 +202,8 @@ jQuery(document).ready(function () {
 
     	});
 
-    	jQuery('.navbar .dropdown > a').click(function () {
-//    		location.href = this.href;
+    	jQuery('.navbar-nav li > a').click(function () {
+    		location.href = this.href;
     	});
     }
 	if (respWidth < 767) {
